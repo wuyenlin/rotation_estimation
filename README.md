@@ -5,8 +5,8 @@ Specifically, 3D rotation matrices have sworn to be the estimation target given 
 
 There are 2 mainstream methods to recover a rotation matrix:
 
-1. Gram-Schmidt orthogonalization [1] ([paper])(https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhou_On_the_Continuity_of_Rotation_Representations_in_Neural_Networks_CVPR_2019_paper.pdf)
-2. Singular Value Decomposition (SVD) [2] ([paper])(https://openaccess.thecvf.com/content/WACV2021/papers/Chu_A_Vector-Based_Representation_to_Enhance_Head_Pose_Estimation_WACV_2021_paper.pdf)
+1. Gram-Schmidt orthogonalization [1] ([paper](https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhou_On_the_Continuity_of_Rotation_Representations_in_Neural_Networks_CVPR_2019_paper.pdf))
+2. Singular Value Decomposition (SVD) [2] ([paper](https://openaccess.thecvf.com/content/WACV2021/papers/Chu_A_Vector-Based_Representation_to_Enhance_Head_Pose_Estimation_WACV_2021_paper.pdf))
 
 
 ```
