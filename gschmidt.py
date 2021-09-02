@@ -1,10 +1,7 @@
 import torch
 import torch.nn.functional as F
+import cmath
  
-def normalize(x: torch.tensor) -> torch.tensor:
-    return x/torch.linalg.norm(x)
-
-
 def gram_schmidt(arr) -> torch.tensor:
     """
     Detail implementation of Gram-Schmidt orthogonalization
@@ -16,9 +13,17 @@ def gram_schmidt(arr) -> torch.tensor:
     dot = torch.sum((row_1*a_2),dim=1).unsqueeze(1)
     row_2 = F.normalize(a_2 - dot*row_1, dim=1)
     row_3 = torch.cross(row_1, row_2)
-    R = torch.cat((row_1, row_2, row_3), 1) # stack + transpose
+
+    R = torch.cat((row_1, row_2, row_3), 1)
     R = R.view(-1,3,3).transpose(1,2)
-    return R.reshape(-1,9)
+    assert cmath.isclose(torch.linalg.det(R), 1, rel_tol=1e-04), torch.linalg.det(R)
+
+    return R.view(3,3)
+
 
 if __name__ == "__main__":
-    pass
+    input = torch.rand(1,6)
+    print("Sample neural network output: \n", input.view(3,-1))
+    recovered = gram_schmidt(input)
+    print("\n")
+    print("Recovered rotation matrix: \n", recovered)
