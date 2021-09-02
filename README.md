@@ -1,7 +1,7 @@
 # Rotation estimation
 
 This repository gives a summary of contemporary  approaches to deep rotation estimation, as well as their implementations in Python.
-Specifically, 3D rotation matrices have sworn to be the estimation target given the discontinuity [1] presented in simpler presentations including Euler angles, quaternion, and axis-angle.
+Specifically, 3D rotation matrices have stood out to be the estimation target given the discontinuity [1] presented in simpler presentations including Euler angles, quaternion, and axis-angle.
 
 There are 2 mainstream methods to recover a rotation matrix:
 
