@@ -4,9 +4,9 @@ import cmath
  
 def gram_schmidt(arr) -> torch.tensor:
     """
-    Detail implementation of Gram-Schmidt orthogonalization
-    :param arr: a tensor of shape (16,6)
-    :return Rs: a stack of flattened rotation matrix, i.e. (16,9)
+    Implementation of Gram-Schmidt orthogonalization
+    :param arr: a tensor of shape (1,6)
+    :return R: a recovered rotation matrix, i.e. (3,3)
     """
     a_1, a_2 = arr[:,:3], arr[:,3:]
     row_1 = F.normalize(a_1, dim=1)
